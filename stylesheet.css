@@ -14,6 +14,17 @@ body{
     height: 100vh;
     background: #f4f4f4;
 }
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 .profile-card{
      display: flex;
@@ -26,6 +37,11 @@ body{
     padding: 25px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 .profile-card::before{
     content: "";
@@ -48,6 +64,7 @@ body{
     padding: 3px;
     margin-bottom: 10px;
      z-index: 1;
+    animation: pulse 2s infinite;
 }
 .image .profile-img{
     position: absolute;
@@ -98,6 +115,7 @@ body{
     margin: 0 8px;
     background-color: #4070f4;
     text-decoration: none;
+    transition: 0.3s;
 }
 .media-buttons .link:hover{
     background-color: #4070f4;
@@ -105,6 +123,8 @@ body{
     margin: 0 8px;
     background-color: #4070f4;
     text-decoration: none;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .profile-card .buttons{
@@ -124,6 +144,7 @@ body{
     background-color: #4070f4;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
 .buttons .button:hover{
